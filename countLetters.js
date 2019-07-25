@@ -11,16 +11,16 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(string) {
   let letterCountObject = {};
   string = string.replace(/\s/g, '').toLowerCase();
-  for(i = 0; i < string.length; i++) {
-    if(!letterCountObject[string[i]]){
+  for (let i = 0; i < string.length; i++) {
+    if (!letterCountObject[string[i]]) {
       letterCountObject[string[i]] = 1;
-    } else { 
+    } else {
       letterCountObject[string[i]] += 1;
     }
 
   }
-   return letterCountObject
-}
+  return letterCountObject;
+};
 
 
 console.log(countLetters("lighthouse in the house"));
