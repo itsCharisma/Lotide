@@ -23,24 +23,24 @@ let assertArraysEqual = function(actual, expected) {
 
 const without = function(source, itemsToRemove) {
   let output = [];
-  for ( let i = 0; i < source.length; i++) {
+  for (let i = 0; i < source.length; i++) {
     if (!isValueInArray(source[i], itemsToRemove)) {
       //we are grabbing arrays values that are not the same
       output.push(source[i]);
     }
-  } 
+  }
   return output;
-}
+};
 
 const isValueInArray = function(value, arr) {
-  let found = false
+  let found = false;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === value) {
       found = true;
     }
   }
-  return found
-}
+  return found;
+};
 
 
 

@@ -34,7 +34,7 @@ const middle = function(input) {
   //For arrays with an even number of elements, an array containing the two elements in the middle should be returned
   } else {
     let secondArr = (input.length / 2);
-    let firstArr = (input.length / 2) - 1; 
+    let firstArr = (input.length / 2) - 1;
     //push values into result
     result.push(input[firstArr], input[secondArr]);
     return result;
