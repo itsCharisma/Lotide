@@ -1,3 +1,4 @@
+// test assertArraysEqual
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
@@ -11,7 +12,6 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-
 let assertArraysEqual = function(actual, expected) {
   const result = eqArrays(actual, expected);
   if (result === true) {
@@ -21,18 +21,22 @@ let assertArraysEqual = function(actual, expected) {
   }
 };
 
-const words = ["ground", "control", "to", "major", "tom"];
-const map = function(array, callback) {
-  const results = [];
-  for (let item of array) {
-    results.push(callback(item));
+// actual function
+const findKey = function(obj, callback) {
+  for (let key of Object.keys(obj)) {
+    if (callback(obj[key])) {
+      return key;
+    }
   }
-  return results;
 };
 
-const results1 = map(words, word => word[0]);
-
-
-assertArraysEqual(results1, ["g", "c", "t", "m", "t"]); // true
-assertArraysEqual(results1, ["g", "c", "t", "m", "T"]); // false
-assertArraysEqual(results1, ["c", "g", "t", "m", "t"]); // false
+// test code
+const result = findKey({
+  "Blue Hill": { stars: 1 },
+  "Akaleri": { stars: 3 },
+  "noma": { stars: 2 },
+  "elBulli": { stars: 3 },
+  "Ora": { stars: 2 },
+  "Akelarre": { stars: 3 }
+}, x => x.stars === 2); // => "noma"
+assertArraysEqual(result, "noma");
