@@ -1,26 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-  }
-  return true;
-};
-
-let assertArraysEqual = function(actual, expected) {
-  const result = eqArrays(actual, expected);
-  if (result === true) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-
 const middle = function(input) {
   let result = [];
   //For arrays with one or two elements, there is no middle. Return an empty array.
@@ -30,7 +7,7 @@ const middle = function(input) {
   } else if (input.length % 2 === 1) {
     let midIndex = Math.floor(input.length / 2);
     //console.log(input[midIndex]);
-    return input[midIndex];
+    return [input[midIndex]];
   //For arrays with an even number of elements, an array containing the two elements in the middle should be returned
   } else {
     let secondArr = (input.length / 2);
@@ -41,13 +18,4 @@ const middle = function(input) {
   }
 };
 
-
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-
-
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+module.exports = middle;
