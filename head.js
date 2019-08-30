@@ -2,7 +2,7 @@ const assertEqual = require('./assertEqual');
 
 const head = function(arr) {
   if (arr.length <= 0) {
-    return;
+    return undefined;
   } else {
     return arr[0];
   }
@@ -10,3 +10,6 @@ const head = function(arr) {
 
 
 module.exports = head;
+
+
+//Hello world
